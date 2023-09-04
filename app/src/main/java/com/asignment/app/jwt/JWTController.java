@@ -44,7 +44,6 @@ public class JWTController {
             e.printStackTrace();
             throw new Exception("Bad Credential");
         }
-        //
         UserDetails userDetails =customUserDetailService.loadUserByUsername(jwtRequest.getUsername());
         String token= jwtUtil.generateToken(userDetails);
         log.info("Jwt "+ token);
